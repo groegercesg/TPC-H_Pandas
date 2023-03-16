@@ -20,5 +20,8 @@ def q17(lineitem, part):
         axis=1)
 
     result = pa_li_join['l_extendedprice'].sum() / 7.0
+    
+    final = pd.DataFrame()
+    final['avg_yearly'] = [result]
 
-    return result
+    return final

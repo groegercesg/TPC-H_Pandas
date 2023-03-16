@@ -18,5 +18,7 @@ def q6(lineitem):
     li_filt['revenue'] = li_filt.l_extendedprice * li_filt.l_discount
 
     result = li_filt.agg({'revenue': 'sum'})
-
-    return result
+    
+    final = pd.DataFrame()
+    final['revenue'] = result
+    return final

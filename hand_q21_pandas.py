@@ -1,13 +1,13 @@
 import pandas as pd
 
-def q21(suppier, lineitem, orders, nation):
+def q21(supplier, lineitem, orders, nation):
     var1 = "SAUDI ARABIA"
 
     l2 = lineitem.copy()
     l3 = lineitem.copy()
 
     na_filt = nation[nation['n_name'] == var1]
-    na_su_join = na_filt.merge(suppier, left_on='n_nationkey', right_on='s_nationkey')
+    na_su_join = na_filt.merge(supplier, left_on='n_nationkey', right_on='s_nationkey')
 
     ord_filt = orders[orders['o_orderstatus'] == "F"]
 

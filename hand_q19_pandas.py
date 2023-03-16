@@ -43,5 +43,9 @@ def q19(lineitem, part):
     li_pa_join_filt["revenue"] = li_pa_join_filt['l_extendedprice'] * (1.0 - li_pa_join_filt['l_discount'])
 
     result = li_pa_join_filt.agg({'revenue': 'sum'})
+    
+    
+    final = pd.DataFrame()
+    final['revenue'] = [result]
 
-    return result
+    return final

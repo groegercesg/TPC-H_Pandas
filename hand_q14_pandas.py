@@ -14,5 +14,8 @@ def q14(lineitem, part):
     li_pa_join["B"] = li_pa_join['l_extendedprice'] * (1.0 - li_pa_join['l_discount'])
 
     result = li_pa_join['A'].sum() * 100.0 / li_pa_join['B'].sum()
+    
+    final = pd.DataFrame()
+    final['promo_revenue'] = [result]
 
-    return result
+    return final
